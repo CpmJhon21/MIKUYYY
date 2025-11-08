@@ -1,0 +1,116 @@
+/* Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+/* Latar Belakang Video */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* Splash Screen */
+#splash {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    animation: fadeOut 0.5s ease-out forwards;
+    animation-delay: 5s; /* Hilang setelah 5 detik */
+}
+
+#splash h1 {
+    margin-top: 1rem;
+    font-size: 2rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Logo dengan Efek 3D Rotasi */
+.logo-container {
+    perspective: 1000px;
+}
+
+.rotating-logo {
+    width: 150px;
+    animation: rotate3D 4s infinite linear;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes rotate3D {
+    0% {
+        transform: rotateY(0);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Animasi Gelombang */
+.wave-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: waveMove 5s infinite linear;
+}
+
+@keyframes waveMove {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Animasi Partikel */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Fade Out Animasi */
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Fade In Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
